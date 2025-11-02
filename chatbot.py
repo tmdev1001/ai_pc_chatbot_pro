@@ -1,7 +1,10 @@
 # chatbot.py
 import torch, json
-from model_train import simple_embed, model
+from training_data import simple_embed
+from model_train import create_model
 
+# Load the trained model
+model = create_model()
 model.load_state_dict(torch.load('intent_model.pt'))
 model.eval()
 
