@@ -15,6 +15,7 @@ def respond_to_query(text):
         usage = json.load(f)
     most_used = max(usage, key=usage.get)
     intent = predict_intent(text)
+    print(intent)
 
     if intent == 0:
         return f"You used {most_used} many times this week."
